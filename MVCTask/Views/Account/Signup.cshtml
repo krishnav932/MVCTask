@@ -1,0 +1,221 @@
+﻿@model MVCTask.Models.RegisterClass
+
+
+@{
+    ViewData["Title"] = "Signup";
+}
+
+@*<p>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;First thing's first, lets go over some
+    <span style='color: saddlebrown'>L</span>
+    <span style='color: cadetblue'>O</span>
+    <span style='color: forestgreen'>G</span>
+    <span style='color: sandybrown'>I</span>
+    <span style='color: lightpink'>S</span>
+    <span style='color: blue'>T</span>
+    <span style='color: red'>I</span>
+    <span style='color: sandybrown'>C</span>
+    <span style='color: violet'>S</span>
+    <span style='color: blueviolet'>!</span>
+</p>*@
+<center>
+    First thing's first, lets go over some 
+    <span style='color: saddlebrown'>L</span>
+    <span style='color: cadetblue'>O</span>
+    <span style='color: forestgreen'>G</span>
+    <span style='color: sandybrown'>I</span>
+    <span style='color: lightpink'>S</span>
+    <span style='color: blue'>T</span>
+    <span style='color: red'>I</span>
+    <span style='color: sandybrown'>C</span>
+    <span style='color: violet'>S</span>
+    <span style='color: blueviolet' >!</span>
+</center>
+<hr />
+
+<style>
+    /*#fn {
+        float: left;
+    }
+    #pn{
+        float:right;
+    }
+    #add {
+        float: right;
+    }
+    #ctry {
+        float: right;
+    }
+    #st {
+        float: right;
+    }
+    #cty {
+        float: right;
+    }
+    #bgt {
+        float: right;
+    }*/
+    .two-col {
+        overflow: hidden; /* Makes this div contain its floats */
+    }
+
+        .two-col .col1,
+        .two-col .col2 {
+            width: 49%;
+        }
+
+        .two-col .col1 {
+            float: left;
+        }
+
+        .two-col .col2 {
+            float: right;
+        }
+
+        .two-col label {
+            display: block;
+        }
+           
+</style>
+@using (Html.BeginForm("Index", "Account", FormMethod.Post))
+{
+
+    <div class="row" >
+
+        
+        <div class="col-md-12">
+            <form asp-action="Signup" id="fn">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="two-col">
+                    <div class="col1">
+                        <label asp-for="FirstName" class="control-label"></label>
+                        <input asp-for="FirstName" class="form-control" />
+                        <span asp-validation-for="FirstName" class="text-danger"></span>
+                    </div>
+                    <div class="col2" id=pn>
+                        <label asp-for="PhoneNumber" class="control-label"></label>
+                        <input asp-for="PhoneNumber" class="form-control" />
+                        <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                    </div>
+                </div>
+                <br />
+                <div class="two-col">
+                    <div class="col1">
+                        <label asp-for="LastName" class="control-label"></label>
+                        <input asp-for="LastName" class="form-control" />
+                        <span asp-validation-for="LastName" class="text-danger"></span>
+                    </div>
+                    <div class="col2" id="add">
+                        <label asp-for="Address" class="control-label"></label>
+                        <input asp-for="Address" class="form-control" />
+                        <span asp-validation-for="Address" class="text-danger"></span>
+                    </div>
+                </div>
+                <br />
+                <div class="two-col">
+                    <div class="col1">
+                        <label asp-for="CompanyName" class="control-label"></label>
+                        <input asp-for="CompanyName" class="form-control" />
+                        <span asp-validation-for="CompanyName" class="text-danger"></span>
+                    </div>
+                    <div class="col2" id="ctry">
+                        <label asp-for="CountryName" class="control-label"></label>
+                        @Html.DropDownList("CountryName",
+                 new SelectList(Enum.GetValues(typeof(Country))),
+                 "Select Country",
+                 new { @class = "form-control" })
+
+                        @*<input asp-for="CountryName" class="form-control" />
+                <span asp-validation-for="CountryName" class="text-danger"></span>*@
+                    </div>
+                </div>
+                <br />
+                <div class="two-col">
+                    <div class="col1">
+                        <label asp-for="EmailAddress" class="control-label"></label>
+                        <input asp-for="EmailAddress" class="form-control" />
+                        <span asp-validation-for="EmailAddress" class="text-danger"></span>
+                    </div>
+                    <div class="col2" id="st">
+                        <label asp-for="StateName" class="control-label"></label>
+                        @Html.DropDownList("StateName",
+                 new SelectList(Enum.GetValues(typeof(State))),
+                 "Select State",
+                 new { @class = "form-control" })
+                        @*<input asp-for="StateName" class="form-control" />
+                <span asp-validation-for="StateName" class="text-danger"></span>*@
+                    </div>
+                </div>
+                <br />
+                <div class="two-col">
+                    <div class="col1">
+                        <label asp-for="WebsiteName" class="control-label"></label>
+                        <input asp-for="WebsiteName" class="form-control" />
+                        <span asp-validation-for="WebsiteName" class="text-danger"></span>
+                    </div>
+                    <div class="col2" id="cty">
+                        <label asp-for="CityName" class="control-label"></label>
+                        @Html.DropDownList("CityName",
+                 new SelectList(Enum.GetValues(typeof(City))),
+                 "Select City",
+                 new { @class = "form-control" })
+
+                        @*<input asp-for="CityName" class="form-control" />
+                <span asp-validation-for="CityName" class="text-danger"></span>*@
+                    </div>
+                </div>
+
+                <br />
+                <div class="two-col">
+                    <div class="col1">
+                        <label asp-for="Business" class="control-label"></label>
+                        @*@foreach (var item in Model.Business)
+            {
+        <input id="@(item.Value)"
+               type="checkbox"
+               value="@item.Value"
+               checked="@item.IsChecked" />
+                            @item.Text <br />}*@
+
+                        @for (int i = 0; i < Model.Business.Count; i++)
+                        {
+                            @Html.CheckBoxFor(m => m.Business[i].IsChecked)
+                            @Model.Business[i].Text
+                            @Html.HiddenFor(m => m.Business[i].Value)
+                            @Html.HiddenFor(m => m.Business[i].Text)
+                            <br />
+                        }
+                        </div>
+                    <div class="col2" id="bgt">
+                        <label asp-for="Budget" class="control-label"></label>
+                        
+                        @for (int i = 0; i < Model.Budget.Count; i++)
+                        {
+                            @Html.CheckBoxFor(m => m.Budget[i].IsChecked)
+                            @Model.Budget[i].Text
+                            @Html.HiddenFor(m => m.Budget[i].Value)
+                            @Html.HiddenFor(m => m.Budget[i].Text)
+                            <br />
+                        }
+                    </div>
+                </div>
+
+                <br />
+                <div class="form-group">
+                    <input type="submit" value="Submit" class="btn btn-primary" />
+                </div>
+            </form>
+
+        </div>
+    </div>
+}
+<br />
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+

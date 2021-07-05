@@ -1,0 +1,68 @@
+﻿@model MVCTask.Models.RegisterClass
+
+<html>
+<head>
+    <style>
+        table, th, td {
+            border: none;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Preview of the submitted details</h1>
+
+    <table border="0">
+
+        <tr>
+            <td>FirstName</td>
+            <td>@Model.FirstName</td>
+        </tr>
+        <tr>
+            <td>PhoneNumber</td>
+            <td>@Model.PhoneNumber</td>
+        </tr>
+        <tr>
+            <td>LastName</td>
+            <td>@Model.LastName</td>
+        </tr>
+        <tr>
+            <td>Address</td>
+            <td>@Model.Address</td>
+        </tr>
+        <tr>
+            <td>CompanyName</td>
+            <td>@Model.CompanyName</td>
+        </tr>
+        <tr>
+            <td>CountryName</td>
+            <td>@Model.CountryName</td>
+        </tr>
+        <tr>
+            <td>EmailAddress</td>
+            <td>@Model.EmailAddress</td>
+        </tr>
+        <tr>
+            <td>StateName</td>
+            <td>@Model.StateName</td>
+        </tr>
+        <tr>
+            <td>WebsiteName</td>
+            <td>@Model.WebsiteName</td>
+        </tr>
+        <tr>
+            <td>CityName</td>
+            <td>@Model.CityName</td>
+        </tr>
+        <tr>
+            <td>Business</td>
+            <td>@ViewBag.business</td>
+        </tr>
+        <tr>
+            <td>Budget</td>
+            <td>@ViewBag.budget</td>
+        </tr>
+    </table>
+
+</body>
+</html>
